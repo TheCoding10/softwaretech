@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alvric - Enterprise Software Infrastructure</title>
+    <title>Alvric | Custom Software Development Company</title>
     <style>
         * {
             margin: 0;
@@ -12,1132 +12,441 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            background: #fff;
-            color: #1a1a1a;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        /* Onboarding Screen */
-        .onboarding {
+        header {
+            background: #1e293b;
+            padding: 20px 0;
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100vh;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .onboarding.hidden {
-            opacity: 0;
-            transform: scale(1.1);
-            pointer-events: none;
-        }
-
-        .onboarding-content {
-            max-width: 1200px;
-            padding: 0 5%;
-            text-align: left;
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .onboarding-logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 4rem;
-            letter-spacing: -0.02em;
-        }
-
-        .onboarding h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.04em;
-            margin-bottom: 2rem;
-            color: #fff;
-        }
-
-        .onboarding-subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 800px;
-            margin-bottom: 3rem;
-            line-height: 1.6;
-        }
-
-        .onboarding-buttons {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-get-started {
-            padding: 1.3rem 3rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-get-started:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.5);
-        }
-
-        .btn-view-demo {
-            padding: 1.3rem 3rem;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-view-demo:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
-
-        /* Main Content */
-        .main-content {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .main-content.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .page {
-            display: none;
-            min-height: 100vh;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-
-        .page.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        nav.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .nav-container {
+        .header-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 3%;
+            padding: 0 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 75px;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 28px;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.02em;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #4a5568;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-cta {
-            padding: 0.75rem 1.8rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff !important;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-        }
-
-        .nav-cta::after {
-            display: none;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 13rem 3% 8rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            right: -100px;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: -1;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-30px, -30px) rotate(5deg); }
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 7vw, 6.5rem);
-            font-weight: 800;
-            line-height: 1.05;
-            letter-spacing: -0.04em;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #4a5568 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            color: #666;
-            max-width: 700px;
-            margin-bottom: 3rem;
-            line-height: 1.6;
-            animation: fadeInUp 0.8s ease 0.1s backwards;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            animation: fadeInUp 0.8s ease 0.2s backwards;
-        }
-
-        .hero-cta {
-            display: inline-block;
-            padding: 1.2rem 2.8rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #fff;
             text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s;
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
         }
 
-        .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
         }
 
-        .hero-cta-secondary {
-            display: inline-block;
-            padding: 1.2rem 2.8rem;
-            background: #fff;
-            color: #333;
+        nav a {
             text-decoration: none;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #FF8A65;
+        }
+
+        .cta-button {
+            background: #FF8A65;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
             transition: all 0.3s;
         }
 
-        .hero-cta-secondary:hover {
-            border-color: #667eea;
-            color: #667eea;
-            transform: translateY(-3px);
+        .cta-button:hover {
+            background: #FF7043;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 138, 101, 0.3);
         }
 
-        /* Stats Section */
-        .stats-section {
-            padding: 7rem 3%;
-            background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .stats-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 4rem;
-            text-align: center;
-        }
-
-        .stat-item {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .stat-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: #666;
-            font-weight: 500;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 9rem 3%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .features h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 5rem;
-            letter-spacing: -0.03em;
-            text-align: center;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-        }
-
-        .feature-card {
-            padding: 2.8rem;
-            background: #fff;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            border-radius: 16px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .hero-main {
+            background: #1e293b;
+            padding: 120px 50px 80px;
+            color: #fff;
             position: relative;
             overflow: hidden;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
-            transition: left 0.6s;
+        .hero-main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .feature-card:hover::before {
-            left: 100%;
+        .hero-text h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
         }
 
-        .feature-card:hover {
-            border-color: rgba(102, 126, 234, 0.3);
-            box-shadow: 0 12px 48px rgba(102, 126, 234, 0.15);
-            transform: translateY(-8px);
+        .hero-text h1 .highlight {
+            color: #FFB74D;
         }
 
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #f0f5ff 0%, #e8eeff 100%);
-            border-radius: 12px;
+        .hero-text .description {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            background: #FF8A65;
+            color: #fff;
+            padding: 16px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background: #FF7043;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 138, 101, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            padding: 16px 35px;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .ai-masterclass {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s;
+            gap: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
         }
 
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .limited-spots {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #FFB74D;
         }
 
-        .feature-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
+        .hero-image-main img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .hero-secondary {
+            background: linear-gradient(135deg, #7C7FFF 0%, #9B7FFF 50%, #B47FFF 100%);
+            padding: 100px 50px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-secondary h2 {
+            font-size: 58px;
             font-weight: 700;
-            transition: color 0.3s;
+            margin-bottom: 40px;
+            line-height: 1.2;
         }
 
-        .feature-card:hover h3 {
-            color: #667eea;
-        }
-
-        .feature-card p {
-            color: #666;
+        .hero-secondary .description {
+            font-size: 20px;
+            margin-bottom: 50px;
+            opacity: 0.95;
             line-height: 1.7;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Page Headers */
-        .page-header {
-            padding: 12rem 3% 5rem;
-            background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.08) 0%, transparent 50%);
-            z-index: -1;
-        }
-
-        .page-header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .page-header h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.03em;
-        }
-
-        .page-header p {
-            font-size: 1.3rem;
-            color: #666;
-            max-width: 700px;
-        }
-
-        .page-content {
-            padding: 7rem 3%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .content-section {
-            margin-bottom: 5rem;
-        }
-
-        .content-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .content-section p {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .content-card {
-            padding: 2.5rem;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            border-radius: 16px;
+        .hero-secondary .btn-start {
+            background: #6366F1;
+            color: #fff;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
             transition: all 0.3s;
-            background: #fff;
+            display: inline-block;
         }
 
-        .content-card:hover {
-            border-color: rgba(102, 126, 234, 0.3);
-            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.12);
-            transform: translateY(-4px);
+        .hero-secondary .btn-start:hover {
+            background: #4F46E5;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
         }
 
-        .content-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            color: #000;
-        }
-
-        .content-card p {
-            color: #666;
-        }
-
-        .content-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .content-card li {
-            padding: 0.6rem 0;
-            color: #666;
-            padding-left: 1.8rem;
-            position: relative;
-        }
-
-        .content-card li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        /* Footer */
-        footer {
-            padding: 6rem 3% 3rem;
+        .quick-links {
+            padding: 80px 50px;
             background: #f8f9fa;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
 
-        .footer-container {
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 3rem;
+        .quick-link-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: #333;
         }
 
-        .footer-about .logo {
-            margin-bottom: 1rem;
+        .quick-link-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
 
-        .footer-about p {
+        .quick-link-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .quick-link-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .quick-link-card p {
             color: #666;
-            line-height: 1.7;
-            max-width: 300px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 80px 50px 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto 50px;
         }
 
         .footer-section h4 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 1.5rem;
-            color: #999;
-            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
-        .footer-links {
+        .footer-section ul {
             list-style: none;
         }
 
-        .footer-links li {
-            margin-bottom: 0.8rem;
+        .footer-section ul li {
+            margin-bottom: 12px;
         }
 
-        .footer-links a {
-            color: #666;
+        .footer-section a {
+            color: #999;
             text-decoration: none;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.2s;
+            transition: color 0.3s;
         }
 
-        .footer-links a:hover {
-            color: #667eea;
-            padding-left: 5px;
+        .footer-section a:hover {
+            color: #fff;
         }
 
         .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
             color: #999;
-            font-size: 0.9rem;
         }
 
-        .social-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .social-links a {
-            color: #999;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .social-links a:hover {
-            color: #667eea;
-            transform: translateY(-2px);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .content-grid {
+        @media (max-width: 968px) {
+            .hero-main-content {
                 grid-template-columns: 1fr;
             }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .hero-text h1 {
+                font-size: 42px;
+            }
+            .hero-secondary h2 {
+                font-size: 42px;
+            }
+            nav ul {
+                gap: 20px;
+                font-size: 14px;
             }
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        @media (max-width: 668px) {
+            .hero-main {
+                padding: 100px 30px 60px;
             }
-
-            .hero {
-                padding: 10rem 5% 6rem;
+            .hero-text h1 {
+                font-size: 32px;
             }
-
-            .onboarding-buttons {
-                flex-direction: column;
+            .hero-secondary {
+                padding: 60px 30px;
             }
-
-            .btn-get-started, .btn-view-demo {
-                width: 100%;
+            .hero-secondary h2 {
+                font-size: 32px;
             }
-
             .hero-buttons {
                 flex-direction: column;
             }
-
-            .features-grid {
-                grid-template-columns: 1fr;
+            nav {
+                display: none;
             }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1.5rem;
+            .quick-links {
+                padding: 60px 30px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Onboarding Screen -->
-    <div class="onboarding" id="onboarding">
-        <div class="onboarding-content">
-            <div class="onboarding-logo">Alvric</div>
-            <h1>Enterprise software infrastructure that scales</h1>
-            <p class="onboarding-subtitle">Build and deploy production applications with a platform designed for performance, security, and developer productivity.</p>
-            <div class="onboarding-buttons">
-                <button class="btn-get-started" onclick="startExperience()">Get Started</button>
-                <button class="btn-view-demo" onclick="startExperience()">View Demo</button>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Alvric</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Get Started</a>
+        </div>
+    </header>
+
+    <section class="hero-main">
+        <div class="hero-main-content">
+            <div class="hero-text">
+                <h1>Transform Your Vision into Reality with Expert <span class="highlight">Software Solutions</span></h1>
+                <p class="description">Alvric builds powerful digital products for businesses, startups, and organizations of every size. From custom software to full-scale tech systems, we turn your ideas into high-performance solutions that drive growth.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn-primary">Book a free demo →</a>
+                    <a href="services.html" class="btn-secondary">Our subjects</a>
+                </div>
+            </div>
+            <div class="hero-image-main">
+                <img src="data:image/svg+xml,%3Csvg width='800' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%235b7c99'/%3E%3Cstop offset='100%25' style='stop-color:%234a6580'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23bg)' rx='15'/%3E%3Crect x='40' y='80' width='720' height='100' fill='%23fff' opacity='0.1' rx='8'/%3E%3Crect x='40' y='200' width='350' height='180' fill='%23fff' opacity='0.15' rx='8'/%3E%3Crect x='410' y='200' width='350' height='180' fill='%23fff' opacity='0.15' rx='8'/%3E%3Crect x='40' y='400' width='350' height='160' fill='%23fff' opacity='0.12' rx='8'/%3E%3Crect x='410' y='400' width='350' height='160' fill='%23fff' opacity='0.12' rx='8'/%3E%3Ccircle cx='120' cy='280' r='30' fill='%23FFB74D' opacity='0.6'/%3E%3Ccircle cx='680' cy='280' r='30' fill='%23FF8A65' opacity='0.6'/%3E%3Ccircle cx='400' cy='480' r='25' fill='%237C7FFF' opacity='0.6'/%3E%3Ctext x='400' y='50' font-family='Arial' font-size='22' font-weight='bold' fill='white' text-anchor='middle'%3EClassroom Learning Environment%3C/text%3E%3C/svg%3E" alt="Students learning">
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Main Content -->
-    <div class="main-content" id="mainContent">
-        <nav id="navbar">
-            <div class="nav-container">
-                <div class="logo" onclick="showPage('home')">Alvric</div>
-                <ul class="nav-links">
-                    <li><a onclick="showPage('home')">Home</a></li>
-                    <li><a onclick="showPage('platform')">Platform</a></li>
-                    <li><a onclick="showPage('solutions')">Solutions</a></li>
-                    <li><a onclick="showPage('resources')">Resources</a></li>
-                    <li><a onclick="showPage('company')">Company</a></li>
-                    <li><a onclick="showPage('contact')" class="nav-cta">Contact</a></li>
+    <section class="hero-secondary">
+        <div class="hero-secondary-content">
+            <h2>Custom Software Development That Launches Your Product in 6-12 Months</h2>
+            <p class="description">Alvric's custom software development services focus on your business goals, covering everything from proof of concept and software architecture to MVPs and AI-driven solutions that meet real-world needs.</p>
+            <a href="contact.html" class="btn-start">Start Your Project</a>
+        </div>
+    </section>
+
+    <section class="quick-links">
+        <div class="quick-links-grid">
+            <a href="services.html" class="quick-link-card">
+                <div class="quick-link-icon">💻</div>
+                <h3>Our Services</h3>
+                <p>Explore our comprehensive custom software development services</p>
+            </a>
+            <a href="process.html" class="quick-link-card">
+                <div class="quick-link-icon">⚙️</div>
+                <h3>Our Process</h3>
+                <p>Learn about our proven development methodology</p>
+            </a>
+            <a href="industries.html" class="quick-link-card">
+                <div class="quick-link-icon">🏢</div>
+                <h3>Industries</h3>
+                <p>Discover the industries we serve worldwide</p>
+            </a>
+            <a href="about.html" class="quick-link-card">
+                <div class="quick-link-icon">👥</div>
+                <h3>About Us</h3>
+                <p>Meet our team and learn our story</p>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Alvric</h4>
+                <p style="color: #999; margin-top: 10px;">Custom software development company delivering innovative solutions for businesses worldwide.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-        </nav>
-
-        <!-- HOME PAGE -->
-        <div id="home" class="page active">
-            <section class="hero">
-                <h1>Enterprise software infrastructure that scales</h1>
-                <p class="hero-subtitle">Build and deploy production applications with a platform designed for performance, security, and developer productivity.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="hero-cta">Get Started</a>
-                    <a href="#" class="hero-cta-secondary">View Demo</a>
-                </div>
-            </section>
-
-            <section class="features">
-                <h2>Everything you need to succeed</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>High Performance</h3>
-                        <p>Lightning-fast infrastructure optimized for enterprise workloads with guaranteed 99.99% uptime.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3>Enterprise Security</h3>
-                        <p>SOC 2 Type II certified with comprehensive compliance and data protection controls.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🌐</div>
-                        <h3>Global Scale</h3>
-                        <p>Deploy across 200+ locations worldwide with automatic load balancing and failover.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📊</div>
-                        <h3>Real-time Analytics</h3>
-                        <p>Comprehensive monitoring and insights with customizable dashboards and alerts.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔄</div>
-                        <h3>Seamless Integration</h3>
-                        <p>Connect with your existing tools through our extensive API and pre-built integrations.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">💬</div>
-                        <h3>24/7 Support</h3>
-                        <p>Dedicated support team available around the clock for your critical needs.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- PLATFORM PAGE -->
-        <div id="platform" class="page">
-            <div class="page-header">
-                <div class="page-header-content">
-                    <h1>The Alvric Platform</h1>
-                    <p>A comprehensive infrastructure platform built for modern enterprises</p>
-                </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">Custom Software Development</a></li>
+                    <li><a href="services.html">Cloud & DevOps</a></li>
+                    <li><a href="services.html">AI & ML Services</a></li>
+                    <li><a href="services.html">Support & Maintenance</a></li>
+                </ul>
             </div>
-            <div class="page-content">
-                <div class="content-section">
-                    <h2>Platform Capabilities</h2>
-                    <p>Our platform provides everything you need to build, deploy, and scale enterprise applications with confidence.</p>
-                    <div class="content-grid">
-                        <div class="content-card">
-                            <h3>Infrastructure</h3>
-                            <ul>
-                                <li>Global edge network</li>
-                                <li>Automatic scaling</li>
-                                <li>Load balancing</li>
-                                <li>CDN acceleration</li>
-                            </ul>
-                        </div>
-                        <div class="content-card">
-                            <h3>Development</h3>
-                            <ul>
-                                <li>CI/CD pipelines</li>
-                                <li>Preview environments</li>
-                                <li>Git integration</li>
-                                <li>Developer APIs</li>
-                            </ul>
-                        </div>
-                        <div class="content-card">
-                            <h3>Data & Storage</h3>
-                            <ul>
-                                <li>Managed databases</li>
-                                <li>Object storage</li>
-                                <li>Caching layers</li>
-                                <li>Backup & recovery</li>
-                            </ul>
-                        </div>
-                        <div class="content-card">
-                            <h3>Observability</h3>
-                            <ul>
-                                <li>Real-time monitoring</li>
-                                <li>Distributed tracing</li>
-                                <li>Log aggregation</li>
-                                <li>Custom metrics</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="/cdn-cgi/l/email-protection#9cf5f2faf3dcfdf0eaeef5ffb2fff3f1"><span class="__cf_email__" data-cfemail="3950575f567958554f4b505a175a5654">[email&#160;protected]</span></a></li>
+                    <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+                    <li>Austin, TX</li>
+                </ul>
             </div>
         </div>
-
-        <!-- SOLUTIONS PAGE -->
-        <div id="solutions" class="page">
-            <div class="page-header">
-                <div class="page-header-content">
-                    <h1>Solutions for Every Industry</h1>
-                    <p>Tailored infrastructure solutions designed for your specific needs</p>
-                </div>
-            </div>
-            <div class="page-content">
-                <div class="content-section">
-                    <h2>Industry Solutions</h2>
-                    <div class="content-grid">
-                        <div class="content-card">
-                            <h3>Financial Services</h3>
-                            <p>Secure, compliant infrastructure for banking, fintech, and financial institutions with SOC 2, PCI DSS, and ISO 27001 certifications.</p>
-                        </div>
-                        <div class="content-card">
-                            <h3>Healthcare</h3>
-                            <p>HIPAA-compliant platform for healthcare providers, medical devices, and health tech applications.</p>
-                        </div>
-                        <div class="content-card">
-                            <h3>E-commerce</h3>
-                            <p>High-performance infrastructure that handles traffic spikes during peak seasons with automatic scaling.</p>
-                        </div>
-                        <div class="content-card">
-                            <h3>Technology</h3>
-                            <p>Developer-friendly platform for SaaS companies, startups, and tech enterprises building innovative products.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- RESOURCES PAGE -->
-        <div id="resources" class="page">
-            <div class="page-header">
-                <div class="page-header-content">
-                    <h1>Resources & Documentation</h1>
-                    <p>Everything you need to get started and succeed with Alvric</p>
-                </div>
-            </div>
-            <div class="page-content">
-                <div class="content-section">
-                    <h2>Developer Resources</h2>
-                    <div class="content-grid">
-                        <div class="content-card">
-                            <h3>Documentation</h3>
-                            <p>Comprehensive guides, tutorials, and API references to help you build with Alvric.</p>
-                        </div>
-                        <div class="content-card">
-                            <h3>API Reference</h3>
-                            <p>Complete API documentation with code examples in multiple programming languages.</p>
-                        </div>
-                        <div class="content-card">
-                            <h3>Case Studies</h3>
-                            <p>Learn how leading companies use Alvric to power their applications.</p>
-                        </div>
-                        <div class="content-card">
-                            <h3>Blog</h3>
-                            <p>Technical insights, product updates, and best practices from our engineering team.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- COMPANY PAGE -->
-        <div id="company" class="page">
-            <div class="page-header">
-                <div class="page-header-content">
-                    <h1>About Alvric</h1>
-                    <p>Building the future of enterprise infrastructure</p>
-                </div>
-            </div>
-            <div class="page-content">
-                <div class="content-section">
-                    <h2>Our Mission</h2>
-                    <p>At Alvric, we're on a mission to empower engineering teams with infrastructure that just works. We believe that developers should focus on building great products, not managing servers and infrastructure complexity.</p>
-                    <p>Founded in 2020, we've grown to serve thousands of companies worldwide, processing billions of requests daily with industry-leading reliability and performance.</p>
-                </div>
-                <div class="content-section">
-                    <h2>Our Values</h2>
-                    <div class="content-grid">
-                        <div class="content-card">
-                            <h3>Developer First</h3>
-                            <p>We build products that developers love to use, with intuitive APIs and excellent documentation.</p>
-                        </div>
-                        <div class="content-card">
-                            <h3>Reliability</h3>
-                            <p>We're committed to providing the most reliable infrastructure platform in the industry.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CONTACT PAGE -->
-        <div id="contact" class="page">
-            <div class="page-header">
-                <div class="page-header-content">
-                    <h1>Get in Touch</h1>
-                    <p>Let's discuss how Alvric can help your organization</p>
-                </div>
-            </div>
-            <div class="page-content">
-                <div class="content-section">
-                    <h2>Contact Our Team</h2>
-                    <p>Whether you're looking to get started, need support, or want to discuss enterprise solutions, our team is here to help.</p>
-                    <div class="content-grid">
-                        <div class="content-card">
-                            <h3>Sales Inquiries</h3>
-                            <p>Email: sales@alvric.com</p>
-                            <p>Phone: +1 (555) 123-4567</p>
-                        </div>
-                        <div class="content-card">
-                            <h3>Technical Support</h3>
-                            <p>Email: support@alvric.com</p>
-                            <p>24/7 Support Portal</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <div class="footer-container">
-                <div class="footer-grid">
-                    <div class="footer-about">
-                        <div class="logo">Alvric</div>
-                        <p>Enterprise infrastructure platform built for teams that ship.</p>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Product</h4>
-                        <ul class="footer-links">
-                            <li><a onclick="showPage('platform')">Platform</a></li>
-                            <li><a onclick="showPage('solutions')">Solutions</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Security</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Resources</h4>
-                        <ul class="footer-links">
-                            <li><a onclick="showPage('resources')">Documentation</a></li>
-                            <li><a href="#">API Reference</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Support</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Company</h4>
-                        <ul class="footer-links">
-                            <li><a onclick="showPage('company')">About</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a onclick="showPage('contact')">Contact</a></li>
-                            <li><a href="#">Press</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div>© 2025 Alvric Inc. All rights reserved.</div>
-                    <div class="social-links">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script>
-        function startExperience() {
-            const onboarding = document.getElementById('onboarding');
-            const mainContent = document.getElementById('mainContent');
-            
-            onboarding.classList.add('hidden');
-            
-            setTimeout(() => {
-                mainContent.classList.add('visible');
-                showPage('home');
-                setTimeout(animateStats, 500);
-            }, 400);
-        }
-
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => {
-                page.classList.remove('active');
-                page.style.display = 'none';
-            });
-            
-            const selectedPage = document.getElementById(pageId);
-            if (selectedPage) {
-                selectedPage.style.display = 'block';
-                setTimeout(() => {
-                    selectedPage.classList.add('active');
-                }, 10);
-                
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-
-                updateActiveNavLink(pageId);
-            }
-
-            if (pageId === 'home') {
-                setTimeout(animateStats, 300);
-            }
-        }
-
-        function updateActiveNavLink(pageId) {
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks.forEach(link => {
-                link.style.fontWeight = '500';
-                link.style.color = '#4a5568';
-            });
-
-            const activeLinks = document.querySelectorAll(`[onclick="showPage('${pageId}')"]`);
-            activeLinks.forEach(activeLink => {
-                if (activeLink && !activeLink.classList.contains('nav-cta')) {
-                    activeLink.style.fontWeight = '600';
-                    activeLink.style.color = '#667eea';
-                }
-            });
-        }
-
-        function animateStats() {
-            const stats = document.querySelectorAll('.stat-item');
-            stats.forEach((stat, index) => {
-                setTimeout(() => {
-                    stat.classList.add('visible');
-                }, index * 100);
-            });
-        }
-
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const featureCards = document.querySelectorAll('.feature-card');
-            featureCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-                observer.observe(card);
-            });
-        });
-    </script>
-</body>
-</html>
+        <div class="footer-bottom">
+            <p
