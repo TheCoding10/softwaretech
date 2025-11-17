@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Process | Alvric</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #333; line-height: 1.6; }
+        header { background: #1e293b; padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 28px; font-weight: 700; color: #fff; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 40px; }
+        nav a { text-decoration: none; color: #fff; font-weight: 500; }
+        nav a:hover, nav a.active { color: #FF8A65; }
+        .cta-button { background: #FF8A65; color: #fff; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; }
+        .page-hero { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); padding: 150px 50px 80px; color: #fff; text-align: center; }
+        .page-hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 20px; }
+        .page-hero p { font-size: 20px; opacity: 0.9; }
+        .content-section { padding: 80px 50px; max-width: 1400px; margin: 0 auto; }
+        .section-title { font-size: 42px; font-weight: 700; text-align: center; margin-bottom: 60px; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .process-card { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .process-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); transition: all 0.3s; }
+        .process-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #7C7FFF, #B47FFF); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 28px; }
+        .process-card h3 { font-size: 24px; margin-bottom: 15px; color: #1a1a1a; }
+        .process-card p { color: #666; line-height: 1.7; }
+        .hero-secondary { background: linear-gradient(135deg, #7C7FFF, #B47FFF); padding: 100px 50px; color: #fff; text-align: center; }
+        .hero-secondary h2 { font-size: 48px; margin-bottom: 30px; }
+        .btn-start { background: #6366F1; color: #fff; padding: 18px 50px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+        footer { background: #1a1a1a; color: #fff; padding: 80px 50px 30px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; max-width: 1400px; margin: 0 auto 50px; }
+        .footer-section h4 { margin-bottom: 20px; }
+        .footer-section ul { list-style: none; }
+        .footer-section a { color: #999; text-decoration: none; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid #333; color: #999; }
+        @media (max-width: 668px) { nav { display: none; } .page-hero { padding: 120px 30px 60px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Alvric</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html" class="active">Process</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Get Started</a>
+        </div>
+    </header>
 
+    <section class="page-hero">
+        <h1>Our Development Process</h1>
+        <p>A proven methodology that delivers results in 6-12 months</p>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">How We Work</h2>
+        <div class="process-grid">
+            <div class="process-card">
+                <div class="process-icon">1️⃣</div>
+                <h3>Initial Assessment</h3>
+                <p>We identify your goals, business requirements, challenges, and define the initial vision and scope of your project.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">2️⃣</div>
+                <h3>Discovery Phase</h3>
+                <p>Define the tech stack, infrastructure, and integrations. Outline project scope, methodologies, deliverables, and timeline.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">3️⃣</div>
+                <h3>Design & Planning</h3>
+                <p>Create intuitive UI/UX and plan technical infrastructure, security measures, integrations, and scalability.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">4️⃣</div>
+                <h3>Development</h3>
+                <p>Build comprehensive functional and non-functional system features using agile methodologies.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">5️⃣</div>
+                <h3>Testing & QA</h3>
+                <p>Rigorous testing to ensure your application is stable, secure, and performs flawlessly before launch.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">6️⃣</div>
+                <h3>Deployment</h3>
+                <p>Handle the entire deployment process, ensuring a smooth transition from development to production.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">7️⃣</div>
+                <h3>Training & Support</h3>
+                <p>Equip your team with knowledge to maximize efficiency and deliver excellent customer experience.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">8️⃣</div>
+                <h3>Maintenance</h3>
+                <p>Enhance functionality over time based on business needs and technological advancements.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-secondary">
+        <h2>Ready to Start Your Project?</h2>
+        <a href="contact.html" class="btn-start">Schedule a Consultation</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Alvric</h4>
+                <p style="color: #999;">Custom software development company.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Alvric. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
