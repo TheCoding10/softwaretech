@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries | Alvric</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #333; line-height: 1.6; }
+        header { background: #1e293b; padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 28px; font-weight: 700; color: #fff; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 40px; }
+        nav a { text-decoration: none; color: #fff; font-weight: 500; }
+        nav a:hover, nav a.active { color: #FF8A65; }
+        .cta-button { background: #FF8A65; color: #fff; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; }
+        .page-hero { background: linear-gradient(135deg, #1e293b, #334155); padding: 150px 50px 80px; color: #fff; text-align: center; }
+        .page-hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 20px; }
+        .content-section { padding: 80px 50px; max-width: 1400px; margin: 0 auto; }
+        .section-title { font-size: 42px; font-weight: 700; text-align: center; margin-bottom: 60px; }
+        .industries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .industry-card { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: all 0.3s; }
+        .industry-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .industry-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #7C7FFF, #B47FFF); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 28px; }
+        .industry-card h3 { font-size: 24px; margin-bottom: 15px; }
+        .industry-card p { color: #666; line-height: 1.7; }
+        .hero-secondary { background: linear-gradient(135deg, #7C7FFF, #B47FFF); padding: 100px 50px; color: #fff; text-align: center; }
+        .btn-start { background: #6366F1; color: #fff; padding: 18px 50px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+        footer { background: #1a1a1a; color: #fff; padding: 80px 50px 30px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; max-width: 1400px; margin: 0 auto 50px; }
+        .footer-section ul { list-style: none; }
+        .footer-section a { color: #999; text-decoration: none; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid #333; color: #999; }
+        @media (max-width: 668px) { nav { display: none; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Alvric</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="industries.html" class="active">Industries</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Get Started</a>
+        </div>
+    </header>
 
+    <section class="page-hero">
+        <h1>Industries We Serve</h1>
+        <p>Delivering specialized software solutions across diverse sectors</p>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Our Expertise Spans Multiple Industries</h2>
+        <div class="industries-grid">
+            <div class="industry-card">
+                <div class="industry-icon">🏥</div>
+                <h3>Healthcare</h3>
+                <p>HIPAA-compliant healthcare platforms, telemedicine solutions, EHR systems, and medical practice software.</p>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">💰</div>
+                <h3>FinTech & Banking</h3>
+                <p>Secure financial applications, payment processing, blockchain solutions, and wealth management platforms.</p>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">🛒</div>
+                <h3>E-Commerce</h3>
+                <p>Scalable online shopping platforms, inventory management, and omnichannel retail experiences.</p>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">📚</div>
+                <h3>Education</h3>
+                <p>Learning management systems, virtual classrooms, and online tutoring platforms.</p>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">🏢</div>
+                <h3>Enterprise</h3>
+                <p>Custom ERP systems, CRM solutions, business intelligence tools, and workflow automation.</p>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">🚀</div>
+                <h3>Startups</h3>
+                <p>MVP development, scalable SaaS platforms, rapid prototyping, and innovative software products.</p>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">🏭</div>
+                <h3>Manufacturing</h3>
+                <p>Industrial IoT solutions, supply chain management, and smart factory technologies.</p>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">🏡</div>
+                <h3>Real Estate</h3>
+                <p>Property management systems, real estate CRM, and virtual tour platforms.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-secondary">
+        <h2>Let's Build Something Amazing</h2>
+        <a href="contact.html" class="btn-start">Discuss Your Project</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Alvric</h4>
+                <p style="color: #999;">Custom software development company.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Alvric. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
