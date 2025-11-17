@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Alvric</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #333; line-height: 1.6; }
+        header { background: #1e293b; padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 28px; font-weight: 700; color: #fff; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 40px; }
+        nav a { text-decoration: none; color: #fff; font-weight: 500; }
+        nav a:hover, nav a.active { color: #FF8A65; }
+        .cta-button { background: #FF8A65; color: #fff; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; }
+        .page-hero { background: linear-gradient(135deg, #1e293b, #334155); padding: 150px 50px 80px; color: #fff; text-align: center; }
+        .page-hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 20px; }
+        .content-section { padding: 80px 50px; max-width: 1200px; margin: 0 auto; }
+        .content-section h2 { font-size: 36px; margin-bottom: 20px; text-align: center; }
+        .content-section p { font-size: 18px; line-height: 1.8; color: #666; margin-bottom: 20px; }
+        .stats { background: linear-gradient(135deg, #7C7FFF, #B47FFF); padding: 80px 50px; color: #fff; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 50px; max-width: 1400px; margin: 0 auto; text-align: center; }
+        .stat-item h3 { font-size: 56px; font-weight: 700; margin-bottom: 10px; }
+        .stat-item p { font-size: 18px; opacity: 0.95; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
+        .value-card { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .value-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #7C7FFF, #B47FFF); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 28px; }
+        .value-card h3 { font-size: 24px; margin-bottom: 15px; }
+        .value-card p { color: #666; line-height: 1.7; }
+        .hero-secondary { background: linear-gradient(135deg, #7C7FFF, #B47FFF); padding: 100px 50px; color: #fff; text-align: center; }
+        .btn-start { background: #6366F1; color: #fff; padding: 18px 50px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+        footer { background: #1a1a1a; color: #fff; padding: 80px 50px 30px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; max-width: 1400px; margin: 0 auto 50px; }
+        .footer-section ul { list-style: none; }
+        .footer-section a { color: #999; text-decoration: none; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid #333; color: #999; }
+        @media (max-width: 668px) { nav { display: none; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Alvric</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Get Started</a>
+        </div>
+    </header>
 
+    <section class="page-hero">
+        <h1>About Alvric</h1>
+        <p>Empowering businesses through innovative custom software solutions</p>
+    </section>
+
+    <section class="content-section">
+        <h2>Our Story</h2>
+        <p>Founded over 15 years ago, Alvric has grown from a small team of passionate developers into a leading custom software development company. Our journey has been driven by a singular mission: to help businesses succeed through innovative technology solutions.</p>
+        <p>We believe that every business is unique, and off-the-shelf solutions rarely address the specific challenges organizations face. That's why we specialize in custom software development – creating tailored solutions that align perfectly with our clients' goals and workflows.</p>
+        <p>Today, with offices across the United States and a team of over 100 talented professionals, we continue to push the boundaries of what's possible in software development.</p>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Years of Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>100+</h3>
+                <p>Team Members</p>
+            </div>
+            <div class="stat-item">
+                <h3>200+</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-item">
+                <h3>95%</h3>
+                <p>Client Retention</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 style="text-align: center; font-size: 42px; margin-bottom: 50px;">Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3>Client-Centric</h3>
+                <p>We prioritize understanding our clients' business goals and challenges, ensuring every solution creates real value.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">💡</div>
+                <h3>Innovation</h3>
+                <p>We stay at the forefront of technology, continuously learning and adopting new tools and methodologies.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>Transparency</h3>
+                <p>Open communication and honest collaboration are the foundation of our client relationships.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⚡</div>
+                <h3>Efficiency</h3>
+                <p>Our agile process and automation tools enable us to deliver high-quality software quickly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-secondary">
+        <h2>Ready to Work with Us?</h2>
+        <a href="contact.html" class="btn-start">Get in Touch</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Alvric</h4>
+                <p style="color: #999;">Custom software development company.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Alvric. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
