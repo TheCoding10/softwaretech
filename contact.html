@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Alvric</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #333; line-height: 1.6; }
+        header { background: #1e293b; padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 28px; font-weight: 700; color: #fff; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 40px; }
+        nav a { text-decoration: none; color: #fff; font-weight: 500; }
+        nav a:hover, nav a.active { color: #FF8A65; }
+        .cta-button { background: #FF8A65; color: #fff; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; }
+        .page-hero { background: linear-gradient(135deg, #1e293b, #334155); padding: 150px 50px 80px; color: #fff; text-align: center; }
+        .page-hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 20px; }
+        .content-section { padding: 80px 50px; max-width: 800px; margin: 0 auto; }
+        .contact-form { background: #fff; padding: 50px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .contact-form h2 { font-size: 32px; margin-bottom: 15px; text-align: center; }
+        .contact-form p { text-align: center; color: #666; margin-bottom: 40px; }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #1a1a1a; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 15px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 16px; }
+        .form-group textarea { min-height: 150px; resize: vertical; }
+        .submit-btn { background: #7C7FFF; color: #fff; padding: 15px 40px; border: none; border-radius: 8px; font-size: 18px; font-weight: 600; cursor: pointer; width: 100%; }
+        .submit-btn:hover { background: #6366F1; }
+        .contact-info { padding: 80px 50px; background: #f8f9fa; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; }
+        .info-card { background: #fff; padding: 40px; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .info-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #7C7FFF, #B47FFF); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; }
+        .info-card h3 { font-size: 22px; margin-bottom: 15px; }
+        .info-card a { color: #7C7FFF; text-decoration: none; }
+        footer { background: #1a1a1a; color: #fff; padding: 80px 50px 30px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; max-width: 1400px; margin: 0 auto 50px; }
+        .footer-section ul { list-style: none; }
+        .footer-section a { color: #999; text-decoration: none; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid #333; color: #999; }
+        @media (max-width: 668px) { nav { display: none; } .contact-form { padding: 30px 20px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Alvric</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Get Started</a>
+        </div>
+    </header>
 
+    <section class="page-hero">
+        <h1>Get In Touch</h1>
+        <p>Let's discuss how we can help bring your vision to life</p>
+    </section>
+
+    <section class="content-section">
+        <div class="contact-form">
+            <h2>Start Your Project Today</h2>
+            <p>Fill out the form and we'll get back to you within 24 hours</p>
+            
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required placeholder="john@company.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Service Interested In *</label>
+                    <select id="service" required>
+                        <option value="">Select a service</option>
+                        <option value="custom">Custom Software Development</option>
+                        <option value="cloud">Cloud & DevOps</option>
+                        <option value="ai">AI & ML Services</option>
+                        <option value="mobile">Mobile App Development</option>
+                        <option value="web">Web Development</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Project Description *</label>
+                    <textarea id="message" required placeholder="Tell us about your project..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">📧</div>
+                <h3>Email</h3>
+                <p><a href="mailto:info@alvric.com">info@alvric.com</a></p>
+                <p style="margin-top: 10px; font-size: 14px; color: #666;">We respond within 24 hours</p>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-icon">📞</div>
+                <h3>Phone</h3>
+                <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                <p style="margin-top: 10px; font-size: 14px; color: #666;">Monday - Friday, 9am - 6pm EST</p>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-icon">📍</div>
+                <h3>Visit Us</h3>
+                <p>123 Tech Boulevard<br>Austin, TX 78701</p>
+                <p style="margin-top: 10px; font-size: 14px; color: #666;">Book an appointment</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Alvric</h4>
+                <p style="color: #999;">Custom software development company.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Alvric. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
